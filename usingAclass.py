@@ -58,7 +58,6 @@ class App(tk.Tk):
 
   def on_closing(self):
     if askokcancel('Quit', 'Do you want to quit?'):
-        self.save_results
         self.destroy()
 
 
