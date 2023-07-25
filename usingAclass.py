@@ -56,20 +56,6 @@ class App(tk.Tk):
           self.wrong = ttk.Label(self, text=f"{self.num1update}*{self.num2update} is {resultAns}", font=('Courier', 16))
           self.wrong.place(relx=0.16, rely=0.14, relwidth=0.73, relheight=0.23)
 
-  def save_results(self):
-      today = datetime.datetime.now()
-      path = os.getcwd()
-
-      filename = f"Results_{today.year}_{today.month}_{today.day}.txt"
-      n = 1
-
-      while (os.path.exists(filename)):
-          filename = f"Results_{today.year}_{today.month}_{today.day}_{n}.txt"
-          n = n + 1
-
-      with open(r'filename', 'w') as fp:
-          fp.write('\n'.join(answers))
-
   def on_closing(self):
     if askokcancel('Quit', 'Do you want to quit?'):
         self.save_results
